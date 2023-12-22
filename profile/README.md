@@ -7,8 +7,6 @@ The "NoCap🎓" mobile application is designed for students who face the problem
 
 ## Machine Learning
 
-[Machine Learning Flowchart](https://github.com/vincentiussagi/NoCap/tree/master/Flowchart)
-
 ### Model Building
  Here's the documentation for the provided code, incorporating insights from feedback and addressing noted issues:
 **Purpose:**
@@ -180,14 +178,42 @@ The app provides the following features for the user:
 * [RoomDb](https://developer.android.com/training/data-storage/room?hl=id)
 * [Fast Android Networking](https://github.com/amitshekhariitbhu/Fast-Android-Networking)
 
-## Software and hardware requirements
-The app is designed to run on mobile devices running Android 10.0 or later.
+## API Deployment
+we got 1 API that installed to the app, and 1 "CC Undeployed" bacouse the CC team run out the time. but you can see it at `CC' repo with Undeployed tag in it
+this one we would explain how we install our emergence API, which run a OCR model v1, its a bad at reading text
+- Create `main.py` File:
 
-## Installing the app
-To install the app, download the .apk file in the releases section.
+    Place your main application logic in the   `main.py` file. This file handles HTTP requests, defines routes, and implements the core functionality of your web app.
 
-# Working with the "NoCap🎓" app
-## Running the app
-To launch the app, click on the corresponding icon, which is located in the menu of the mobile device. Clicking on this icon opens an authorization window in which the user needs to enter an Google account and password.
+- Create `app.yaml` File:
 
-After already logging in with a Google account, the user can fully access the app.
+    Configure your application settings in the `app.yaml` file. This includes specifying the runtime, environment variables, and other configuration details relevant to running your application on Google App Engine.
+
+- Create `requirements.txt` File:
+
+    List all Python packages and their versions that your application depends on in the `requirements.txt` file. This file is used to install the necessary dependencies during the deployment process.
+
+- Deploy Using Gogole Cloud deploy:
+
+    Ensure you have the Google Cloud SDK installed and configured on your local machine. Run the gcloud deploy command to upload your application code and configuration to your specified Google Cloud project. This will make your web application accessible on the web.
+
+  ## Cloud Computing
+  Undeployed
+  
+This one is the CC team's hard work, but, as we already know, this project got undeployed from our app. However, it's here anyway
+
+- Create VM Instance:
+
+    Begin the deployment process by creating a virtual machine instance. Specify the machine type, operating system, and other relevant configurations. VM instances serve as the computing resources where your model will be deployed, enabling it to serve predictions.
+
+- Open SSH to Install Requirements and Deploy the Model:
+
+    After successfully creating the VM instance, establish an SSH connection to access the instance's command line remotely. Once connected, install the necessary requirements for your machine learning model. This step may involve installing libraries, dependencies, and any tools essential for serving the model.
+
+- Deploy Model in VM Instance:
+
+    Utilize the prepared VM to deploy your machine learning model. This involves transferring the trained model files, the inference script, and any additional resources required for making predictions onto the instance. Ensure that the model is properly configured to run within the environment provided by the VM.
+
+- Create API for Cloud Storage:
+
+    If your goal is to create an API (Application Programming Interface) for interacting with your model, consider setting up an API for accessing model files stored in cloud storage, such as Google Cloud Storage. This API can facilitate the retrieval of input data, sending requests to the model, and receiving predictions.
